@@ -1,0 +1,66 @@
+.bg{
+    background-color: lightseagreen;
+   
+}
+.txt{
+    font-weight: bold;
+    font-size: 60px;
+}
+.body{
+    background-color: 	rgb(206, 241, 206);
+}
+
+.card{
+    box-shadow: '0 2px 6px rgba(32, 178, 170, 0.1)';
+}
+
+.button{
+    background-color: lightseagreen;
+     color: white;
+}
+
+.button:hover{
+    background-color: black;
+    color: white;
+}
+
+.gold{
+    color: gold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+  }
+  .silver{
+    color: silver;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+  }
+  .brownce{
+    color: #964B00;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+  }
+  .border-custom{
+    border-color: #20b2aa;
+    border-radius: 50px;
+    border-width: 2px;
+  }
+
+  .card:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 0 3px #20b2aa;
+    border-color:#20b2aa;
+    border-width: 3px;
+}
+
+.dark:hover {
+    background-color: black;
+    color: white;
+}
+.section-title{
+    color: #20b2aa;
+}

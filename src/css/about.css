@@ -1,0 +1,50 @@
+.body{
+  background-color: 	rgb(206, 241, 206);
+}
+.page-header {
+    padding: 20px;
+  }
+  
+  .txt {
+    font-size: 36px;
+  }
+  
+  .about-section {
+    padding: 40px;
+  }
+
+  .about-title {
+    font-weight: bold;
+    font-size:40px;
+    font-family: Times New Roman;
+    color: lightseagreen;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .img {
+    margin-top: 50px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .txt {
+      font-size: 24px;
+    }
+    
+    .about-title {
+      font-size: 20px;
+    }
+    
+    .about-text {
+      font-size: 14px;
+    }
+  }
+  

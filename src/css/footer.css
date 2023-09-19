@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+footer{
+    width: 100%;
+    height: 100%;
+    background-color:lightseagreen;
+    padding: 20px 60px;
+}
+
+footer .container{
+    width: 90%;
+    margin-left: 5%;
+    position: relative;
+}
+
+footer .container .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer .container .row .col{
+    padding: 10px 50px;
+    width: 100%;
+    border-left: 2px solid #fff;
+}
+
+h5{
+    text-align: center;
+    font-size: 1.3rem;
+    color: aliceblue;
+}
+
+.list{
+    margin-top: 20px;
+}
+
+.line{
+    padding: 5px 0px;
+    color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+}
+
+.copyright{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
+    background-color: lightseagreen;
+    text-align: center;
+}
+
+.copyright p{
+    color: #E4E9F2;
+}
+  
