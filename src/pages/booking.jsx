@@ -4,6 +4,8 @@ import { Container, Form, Button,Col,Row } from 'react-bootstrap';
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import '../css/booking.css'
+import axios from 'axios';
+
 
 const Booking = () => {
 
@@ -11,25 +13,25 @@ const Booking = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [selectedPackage, setSelectedPackage] = useState('');
+  const[amount,setAmount] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Phone:', phone);
-    console.log('Package:',selectedPackage);
-
-    let setBudget;
-    if (selectedPackage === 'gold') {
-      setBudget = '1000';
-    } else if (selectedPackage === 'silver') {
-      setBudget = '500';
-    } else if (selectedPackage === 'brownce') {
-      setBudget = '250';
-    }
-  
-    console.log('Budget Amount:',setBudget);
-   
+    await axios.post("http://localhost:8080/booking",{
+      name : name,
+      email : email,
+      phone :phone,
+      selectedPackage:selectedPackage,
+      amount:amount,
+  }).then (res=>{
+      alert(res.data.result);
+      setName("");
+      setEmail("");
+      setEmail("");
+      setSelectedPackage("");
+      setAmount("");
+    
+    })
   };
 
   return (
@@ -111,7 +113,7 @@ const Booking = () => {
           <Form.Control
             type="text"
             placeholder="Enter your Budget amount"
-            value={selectedPackage === 'gold' ? '1000' : selectedPackage === 'silver' ? '500' : selectedPackage === 'brownce' ? '250' : ''}
+            value={selectedPackage === 'gold' ? amount=== '1000' : selectedPackage === 'silver' ? amount==='500' : selectedPackage === 'brownce' ? amount==='250' : ''}
             readOnly
             required
           />

@@ -25,6 +25,8 @@ const Contact = () => {
     }).then(res=>{
       alert(res.data.result);
       setName("");
+      setEmail("");
+      setMessage("");
     })
   };
 
