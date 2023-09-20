@@ -1,5 +1,6 @@
 const express = require('express');
 const { saveContactDetails, getContactDetails } = require('../controllers/contactController');
+const {saveBookingDetails,getBookinDetails } =  require('../controllers/bookingController');
 const route = express.Router();
 
 route.get("/", (req,res)=>{
@@ -7,5 +8,6 @@ route.get("/", (req,res)=>{
 });
 // route.get("/contact", getContactDetails); //back end route for pass data to frontend
 route.post("/contact", saveContactDetails);  // insert data route
+route.post("/booking",saveBookingDetails);
 
 module.exports = route;
