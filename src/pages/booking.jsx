@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button,Col,Row } from 'react-bootstrap';
 import Nav from '../components/nav'
@@ -15,6 +15,29 @@ const Booking = () => {
   const [selectedPackage, setSelectedPackage] = useState('');
   const[amount,setAmount] = useState('');
 
+    // Use useEffect to calculate the amount whenever selectedPackage changes
+    useEffect(() => {
+      // Define your logic to calculate the amount based on the selectedPackage
+      let calculatedAmount = '';
+  
+      switch (selectedPackage) {
+        case 'gold':
+          calculatedAmount = '1000';
+          break;
+        case 'silver':
+          calculatedAmount = '500';
+          break;
+        case 'brownce':
+          calculatedAmount = '250';
+          break;
+        default:
+          calculatedAmount = '';
+          break;
+      }
+  
+      setAmount(calculatedAmount);
+    }, [selectedPackage]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8080/booking",{
@@ -27,7 +50,7 @@ const Booking = () => {
       alert(res.data.result);
       setName("");
       setEmail("");
-      setEmail("");
+      setPhone("");
       setSelectedPackage("");
       setAmount("");
     
@@ -113,7 +136,7 @@ const Booking = () => {
           <Form.Control
             type="text"
             placeholder="Enter your Budget amount"
-            value={selectedPackage === 'gold' ? amount=== '1000' : selectedPackage === 'silver' ? amount==='500' : selectedPackage === 'brownce' ? amount==='250' : ''}
+            value={amount}
             readOnly
             required
           />
